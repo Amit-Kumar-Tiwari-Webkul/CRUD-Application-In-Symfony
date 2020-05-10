@@ -1,0 +1,7 @@
+{{include('pages/inc/header.html.twig')}}
+<a href="{{ absolute_url(asset('')) }}" class="btn btn-info">Go Back</a>
+<h3>Create Post</h3>
+{{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}
+{{include('pages/inc/footer.html.twig')}}

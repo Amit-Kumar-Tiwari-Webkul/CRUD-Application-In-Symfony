@@ -1,0 +1,16 @@
+{{include('pages/inc/header.html.twig')}}
+<a href="{{ absolute_url(asset('')) }}" class="btn btn-info">Go Back</a>
+<h3>View Post</h3>
+
+<ul class="list-group">
+  <li class="list-group-item">
+    <b>Title</b> : {{ post.title }}
+  </li>
+  <li class="list-group-item">
+    <b>Description</b> : {{ post.description }}
+  </li>
+  <li class="list-group-item">
+   <b>Category</b> : {{ post.category }}
+  </li>
+</ul>
+{{include('pages/inc/footer.html.twig')}}

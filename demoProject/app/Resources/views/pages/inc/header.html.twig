@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Simple CRUD Application</title>
+        <link rel="stylesheet" href="{{absolute_url(asset('css/bootstrap.css'))}}">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="margin-bottom:30px;">
+            <h3>Simple CRUD Application In Symfony</h3>
+        </nav>
+        <div class="container">
+        {% for success_message in app.session.flashBag.get('message') %}
+            <div class="alert alert-success">{{ success_message }}</div>
+        {% endfor %}
+        </div>
+        <div class="container">

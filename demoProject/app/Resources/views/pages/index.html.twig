@@ -1,0 +1,35 @@
+{{include('pages/inc/header.html.twig')}}
+<a href="{{ absolute_url(asset('')) }}createPost" class="btn btn-primary">Create</a>
+<h3>All Posts</h3>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Category</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% if posts is not empty %}
+        {% for post in posts %}
+            <tr>
+                <td>{{post.id}}</td>
+                <td>{{post.title}}</td>
+                <td width="50%">{{post.description}}</td>
+                <td>{{post.category}}</td>
+                <td>
+                    <a href="{{ absolute_url(asset('')) }}viewPost/{{post.id}}" class="btn btn-success btn-sm">View</a>
+                    <a href="{{ absolute_url(asset('')) }}editPost/{{post.id}}" class="btn btn-primary btn-sm">Edit</a>
+                    <a href="{{ absolute_url(asset('')) }}deletePost/{{post.id}}" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+    {% else %}
+        <tr><td colspan="5"> There is no entry</td></tr>
+    {% endif %}
+    </tbody>
+</table>
+
+{{include('pages/inc/footer.html.twig')}}
